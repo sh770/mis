@@ -23,7 +23,7 @@ export const attack = () => {
 
 const reduceEnemyHp = () => {
   enmeyHp -= generateRandomDamage();
-  if (enmeyHp >= 0) {
+  if (enmeyHp <= 0) {
     enmeyHp = 0
     console.log("enmeyHp", 0);
   }
@@ -64,7 +64,7 @@ const setEnemyTimeAttack = () => {
   setTimeout(() => {
     if (isGameRunning && enmeyHp > 0) {
       userHp -= generateRandomDamage();
-      if (userHp >= 0) {
+      if (userHp <= 0) {
         userHp = 0
         console.log("userHp", 0);
       }

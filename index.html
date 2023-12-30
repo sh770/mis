@@ -34,5 +34,15 @@
     </main>
     <div id="modal"></div>
     <script defer type="module" src="https://sh770.github.io/mis/src/app.js"></script>
+    <!-- <script defer type="module">
+        // בדיקה של ה-URL לקביעת המקום
+        if (window.location.href.includes('localhost')) {
+          // נטען קובץ אחר לפי הצורך בסביבת הפיתוח
+          import('./local/app.js');
+        } else {
+          // נטען את הקובץ מה-URL הרשום לסביבת השרת
+          import('https://sh770.github.io/mis/src/app.js');
+        }
+      </script> -->
 </body>
 </html>
