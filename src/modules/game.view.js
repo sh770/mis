@@ -18,8 +18,8 @@ export const renderHpBars = (enmeyHp, userHp, isUserTurn) => {
   }
 };
 export const rederWinerText = (winerName,enmeyHp, userHp) => {
-  enemyBarElement.style.width = enmeyHp + "%";
-  userBarElement.style.width = userHp + "%";
+  // enemyBarElement.style.width = enmeyHp + "%";
+  // userBarElement.style.width = userHp + "%";
   headerElement.innerHTML = ` המנצח הוא ${winerName}`;
 };
 
