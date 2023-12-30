@@ -25,8 +25,9 @@ const reduceEnemyHp = () => {
 
 const checkWinerState = () => {
   const winer = userHp <= 0 ? "המחשב" : enmeyHp <= 0 ? "אנחנו" : null;
-
+  
   if (winer) {
+    view.renderHpBars(enmeyHp, userHp, isUserTurn);
     isGameRunning = false;
     view.rederWinerText(winer);
     setTimeout(() => {
