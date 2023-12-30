@@ -6,6 +6,13 @@ let isUserTurn = true;
 let isGameRunning = true;
 
 const MAX_DMG = 50;
+
+// const MIN_DMG =(generateRandomDamage)=>{
+//   if(generateRandomDamage < enmeyHp && generateRandomDamage < userHp){
+
+//   }
+// }
+
 const generateRandomDamage = () => Math.floor(Math.random() * MAX_DMG);
 
 export const attack = () => {
@@ -16,6 +23,10 @@ export const attack = () => {
 
 const reduceEnemyHp = () => {
   enmeyHp -= generateRandomDamage();
+  if (enmeyHp >= 0) {
+    enmeyHp = 0
+    console.log("enmeyHp", 0);
+  }
   view.renderHpBars(enmeyHp, userHp, isUserTurn);
   console.log("Enemy Hp left wite:", enmeyHp);
   checkWinerState();
@@ -25,7 +36,7 @@ const reduceEnemyHp = () => {
 
 const checkWinerState = () => {
   const winer = userHp <= 0 ? "המחשב" : enmeyHp <= 0 ? "אנחנו" : null;
-  
+
   if (winer) {
     view.renderHpBars(enmeyHp, userHp, isUserTurn);
     isGameRunning = false;
@@ -53,6 +64,10 @@ const setEnemyTimeAttack = () => {
   setTimeout(() => {
     if (isGameRunning && enmeyHp > 0) {
       userHp -= generateRandomDamage();
+      if (userHp >= 0) {
+        userHp = 0
+        console.log("userHp", 0);
+      }
       console.log("User Hp left wite:", userHp);
       view.renderHpBars(enmeyHp, userHp, isUserTurn);
       checkWinerState();
