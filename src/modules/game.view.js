@@ -19,8 +19,8 @@ export const rederWinerText = (winerName) => {
 };
 
 export const renderInitialState = () => {
-  enemyBarElement.width = 100 + "%";
-  userBarElement.width = 100 + "%";
+  enemyBarElement.style.width = 100 + "%";
+  userBarElement.style.width = 100 + "%";
   enemyHpElement.innerHTML = " חיים 100 ";
   userHpElement.innerHTML = " חיים 100 ";
   buttonElement.innerHTML = "תקיפה";
