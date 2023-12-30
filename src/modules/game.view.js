@@ -11,6 +11,11 @@ export const renderHpBars = (enmeyHp, userHp, isUserTurn) => {
   enemyHpElement.innerHTML = ` חיים ${enmeyHp}`;
   userHpElement.innerHTML = ` חיים ${userHp}`;
   buttonElement.innerHTML = isUserTurn ? "ממתין" : "תקיפה";
+  if (buttonElement.innerHTML === "ממתין") {
+    buttonElement.disabled = true;
+  } else {
+    buttonElement.disabled = false;
+  }
 };
 export const rederWinerText = (winerName) => {
   headerElement.innerHTML = ` המנצח הוא ${winerName}`;
