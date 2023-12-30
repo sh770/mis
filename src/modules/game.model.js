@@ -16,8 +16,8 @@ export const attack = () => {
 
 const reduceEnemyHp = () => {
   enmeyHp -= generateRandomDamage();
-  console.log("Enemy Hp left wite:", enmeyHp);
   view.renderHpBars(enmeyHp, userHp, isUserTurn);
+  console.log("Enemy Hp left wite:", enmeyHp);
   checkWinerState();
   switchTurns();
   setEnemyTimeAttack();
@@ -53,9 +53,9 @@ const setEnemyTimeAttack = () => {
   setTimeout(() => {
     if (isGameRunning && enmeyHp > 0) {
       userHp -= generateRandomDamage();
+      console.log("User Hp left wite:", userHp);
       view.renderHpBars(enmeyHp, userHp, isUserTurn);
       checkWinerState();
-      console.log("User Hp left wite:", userHp);
       switchTurns();
     }
   }, 2000);
