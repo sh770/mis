@@ -80,8 +80,14 @@ button:disabled{
 
 #user-hp-bar {
     width: 100%;
+    transition: 2s;
+    border-radius: 50px;
+    border: solid red 1px;
 }
 
 #enemy-hp-bar {
     width: 100%;
+    transition: 2s;
+    border-radius: 50px;
+    border: solid red 1px;
 }

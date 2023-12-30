@@ -5,7 +5,7 @@ let userHp = 100;
 let isUserTurn = true;
 let isGameRunning = true;
 
-const MAX_DMG = 50;
+const MAX_DMG = 100;
 
 // const MIN_DMG =(generateRandomDamage)=>{
 //   if(generateRandomDamage < enmeyHp && generateRandomDamage < userHp){
@@ -24,10 +24,10 @@ export const attack = () => {
 const reduceEnemyHp = () => {
   enmeyHp -= generateRandomDamage();
   if (enmeyHp <= 0) {
-    enmeyHp = 0
-    console.log("enmeyHp", 0);
+    enmeyHp = 0;
+    // console.log("enmeyHp", 0);
   }
-  view.renderHpBars(enmeyHp, userHp, isUserTurn);
+  view.renderHpBars(enmeyHp, userHp, isUserTurn,isGameRunning);
   console.log("Enemy Hp left wite:", enmeyHp);
   checkWinerState();
   switchTurns();
@@ -38,12 +38,12 @@ const checkWinerState = () => {
   const winer = userHp <= 0 ? "המחשב" : enmeyHp <= 0 ? "אנחנו" : null;
 
   if (winer) {
-    view.renderHpBars(enmeyHp, userHp, isUserTurn);
+    isUserTurn = false;
     isGameRunning = false;
     view.rederWinerText(winer);
     setTimeout(() => {
       resetGamesSetings();
-    }, 15000);
+    }, 5000);
   }
 };
 
@@ -57,19 +57,18 @@ const resetGamesSetings = () => {
 
 const switchTurns = () => {
   isUserTurn = !isUserTurn;
-  // console.log(isUserTurn);
 };
 
 const setEnemyTimeAttack = () => {
   setTimeout(() => {
     if (isGameRunning && enmeyHp > 0) {
+      // userHp = 0;
       userHp -= generateRandomDamage();
       if (userHp <= 0) {
-        userHp = 0
-        console.log("userHp", 0);
+        userHp = 0;
       }
+      view.renderHpBars(enmeyHp, userHp, isUserTurn,isGameRunning);
       console.log("User Hp left wite:", userHp);
-      view.renderHpBars(enmeyHp, userHp, isUserTurn);
       checkWinerState();
       switchTurns();
     }

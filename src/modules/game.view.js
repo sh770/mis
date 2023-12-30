@@ -5,11 +5,18 @@ const userHpElement = document.querySelector("#user-hp");
 const buttonElement = document.querySelector("button");
 const headerElement = document.querySelector("header");
 
-export const renderHpBars = (enmeyHp, userHp, isUserTurn) => {
+export const renderHpBars = (enmeyHp, userHp, isUserTurn, isGameRunning) => {
   enemyBarElement.style.width = enmeyHp + "%";
   userBarElement.style.width = userHp + "%";
   enemyHpElement.innerHTML = ` חיים ${enmeyHp}`;
   userHpElement.innerHTML = ` חיים ${userHp}`;
+  // console.log("התור של המחשב :", isUserTurn);
+  if (!isGameRunning) {
+    buttonElement.innerHTML = "ממתין";
+    buttonElement.disabled = false;
+  } else {
+    buttonElement.disabled = true;
+  }
   buttonElement.innerHTML = isUserTurn ? "ממתין" : "תקיפה";
   if (buttonElement.innerHTML === "ממתין") {
     buttonElement.disabled = true;
@@ -17,9 +24,7 @@ export const renderHpBars = (enmeyHp, userHp, isUserTurn) => {
     buttonElement.disabled = false;
   }
 };
-export const rederWinerText = (winerName,enmeyHp, userHp) => {
-  // enemyBarElement.style.width = enmeyHp + "%";
-  // userBarElement.style.width = userHp + "%";
+export const rederWinerText = (winerName) => {
   headerElement.innerHTML = ` המנצח הוא ${winerName}`;
 };
 
@@ -30,5 +35,5 @@ export const renderInitialState = () => {
   userHpElement.innerHTML = " חיים 100 ";
   buttonElement.innerHTML = "תקיפה";
   headerElement.innerHTML = "משחק לחימה";
-  buttonElement.disabled = false;  
+  buttonElement.disabled = false;
 };
