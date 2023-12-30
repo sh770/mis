@@ -8,8 +8,6 @@ const headerElement = document.querySelector("header");
 export const renderHpBars = (enmeyHp, userHp, isUserTurn) => {
   enemyBarElement.style.width = enmeyHp + "%";
   userBarElement.style.width = userHp + "%";
-  console.log(userBarElement.style.width)
-  console.log(5555);
   enemyHpElement.innerHTML = ` חיים ${enmeyHp}`;
   userHpElement.innerHTML = ` חיים ${userHp}`;
   buttonElement.innerHTML = isUserTurn ? "ממתין" : "תקיפה";
