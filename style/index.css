@@ -53,6 +53,11 @@ button:hover {
     border: solid red 2px;
     border-radius: 20%;
 }
+button:disabled{
+    border: solid rgb(23, 22, 22) 2px;
+    background-color: #707a75;
+
+}
 
 
 
