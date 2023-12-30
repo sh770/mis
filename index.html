@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>משחק לחימה</title>
+    <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+    <header>
+        משחק לחימה
+    </header>
+    <main>
+        <div class="container">
+            <div class="hero-card">
+                <h2>Dawn</h2>
+                <img src="/assets/b.jpg" alt="hero"/>
+                <div class="bar-container">
+                    <div class="bar" id="user-hp-bar"></div>
+                </div>
+                <p class="hp" id="user-hp">חיים 100</p>
+            </div>
+            <button>תקיפה</button>
+            <div class="hero-card">
+                <h2>doom</h2>
+                <img src="/assets/a.jpg" alt="hero"/>
+                <div class="bar-container">
+                    <div class="bar" id="enemy-hp-bar"></div>
+                </div>
+                <p class="hp" id="enemy-hp">חיים 100</p>
+            </div>
+        </div>
+
+    </main>
+    <div id="modal"></div>
+    <script defer type="module" src="/src/app.js"></script>
+</body>
+</html>
