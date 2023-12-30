@@ -33,16 +33,16 @@
 
     </main>
     <div id="modal"></div>
-    <script defer type="module" src="https://sh770.github.io/mis/src/app.js"></script>
-    <!-- <script defer type="module">
+    <!-- <script defer type="module" src="https://sh770.github.io/mis/src/app.js"></script> -->
+    <script defer type="module">
         // בדיקה של ה-URL לקביעת המקום
-        if (window.location.href.includes('localhost')) {
+        if (window.location.href.includes('http://127.0.0.1:5501')) {
           // נטען קובץ אחר לפי הצורך בסביבת הפיתוח
-          import('./local/app.js');
+          import('./src/app.js');
         } else {
           // נטען את הקובץ מה-URL הרשום לסביבת השרת
           import('https://sh770.github.io/mis/src/app.js');
         }
-      </script> -->
+      </script>
 </body>
 </html>
