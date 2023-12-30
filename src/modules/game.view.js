@@ -28,4 +28,5 @@ export const renderInitialState = () => {
   userHpElement.innerHTML = " חיים 100 ";
   buttonElement.innerHTML = "תקיפה";
   headerElement.innerHTML = "משחק לחימה";
+  buttonElement.disabled = false;  
 };
