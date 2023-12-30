@@ -17,7 +17,9 @@ export const renderHpBars = (enmeyHp, userHp, isUserTurn) => {
     buttonElement.disabled = false;
   }
 };
-export const rederWinerText = (winerName) => {
+export const rederWinerText = (winerName,enmeyHp, userHp) => {
+  enemyBarElement.style.width = enmeyHp + "%";
+  userBarElement.style.width = userHp + "%";
   headerElement.innerHTML = ` המנצח הוא ${winerName}`;
 };
 
