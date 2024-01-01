@@ -43,7 +43,7 @@ const checkWinerState = () => {
     view.rederWinerText(winer);
     setTimeout(() => {
       resetGamesSetings();
-    }, 5000);
+    }, 8000);
   }
 };
 
