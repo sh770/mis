@@ -46,9 +46,11 @@ button {
     margin: .2em;
     cursor: pointer;
     border-radius: 20%;
-    width: 50px;
+    width:100px;
+    height: 70px;
     white-space: normal;
     border: solid blue 2px;
+
 }
 
 button:hover {
