@@ -35,10 +35,10 @@ const reduceEnemyHp = () => {
 };
 
 const checkWinerState = () => {
-  const winer = userHp <= 0 ? "המחשב" : enmeyHp <= 0 ? "אנחנו" : null;
+  const winer = userHp <= 0 ? "המחשב" : enmeyHp <= 0 ? "השחקן" : null;
 
   if (winer) {
-    isUserTurn = false;
+    // isUserTurn = false;
     isGameRunning = false;
     view.rederWinerText(winer);
     setTimeout(() => {
